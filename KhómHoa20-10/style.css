@@ -1,0 +1,105 @@
+/* Định dạng chung */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a2e; /* Nền màu tối */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #e4e4e4;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Khóm hoa */
+.garden {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+/* Hoa */
+.flower {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: sway 4s ease-in-out infinite;
+}
+
+/* Thân cây */
+.stem {
+    width: 4px;
+    height: 80px;
+    background-color: #67e8a6;
+    position: relative;
+}
+
+/* Cánh hoa */
+.petal {
+    width: 30px;
+    height: 20px;
+    background-color: #62d0ff;
+    border-radius: 50%;
+    position: absolute;
+    animation: bloom 2s ease-in-out infinite alternate;
+}
+
+.petal1 { top: -10px; transform: rotate(45deg); }
+.petal2 { top: -10px; transform: rotate(-45deg); }
+.petal3 { top: -20px; transform: rotate(0deg); }
+
+/* Tâm hoa */
+.center {
+    width: 15px;
+    height: 15px;
+    background-color: #e3f6fd;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+}
+
+/* Lá cây */
+.leaf {
+    width: 40px;
+    height: 20px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.leaf-left {
+    left: -60px;
+    bottom: -20px;
+    transform: rotate(45deg);
+    animation: leaf-sway 3s ease-in-out infinite;
+}
+
+.leaf-right {
+    right: -60px;
+    bottom: -20px;
+    transform: rotate(-45deg);
+    animation: leaf-sway 3s ease-in-out infinite;
+}
+
+/* Hiệu ứng chuyển động */
+@keyframes sway {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(3deg); }
+}
+
+@keyframes bloom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes leaf-sway {
+    0%, 100% { transform: rotate(45deg) scale(1); }
+    50% { transform: rotate(50deg) scale(1.1); }
+}
